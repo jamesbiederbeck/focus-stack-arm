@@ -1,6 +1,15 @@
 Focus Stack Builds for ARM
 ============================
 I've got arm64 devices all over, so I need this. I think this will run in termux on android, that's my target.
+I'm building this on an ARM64 chromebook and in 
+
+```
+# build on arm64
+git clone git@github.com:jamesbiederbeck/focus-stack-arm.git
+cd focus-stack-arm
+sudo apt install -y libopencv-dev
+make -d builddeb 
+```
 
 
 Fast and easy focus stacking
