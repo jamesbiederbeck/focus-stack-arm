@@ -1,3 +1,8 @@
+Focus Stack Builds for ARM
+============================
+I've got arm64 devices all over, so I need this. I think this will run in termux on android, that's my target.
+
+
 Fast and easy focus stacking
 ============================
 
