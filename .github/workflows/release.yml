@@ -50,6 +50,35 @@ jobs:
           path: focus-stack/build/focus-stack.AppImage
           name: Focus-stack Linux x86_64 AppImage
 
+  arm64_binary:
+    name: Build binary on ARM64
+    runs-on: ARM64
+    strategy:
+      matrix:
+        platform: [arm64]
+    
+    steps:
+      - name: Check out code from GitHub
+        uses: actions/checkout@v4
+        with: 
+          path: focus-stack
+          fetch-depth: "0"
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install libopencv-dev build-essential debhelper devscripts
+      - name: Build binary, .deb and appimage
+        run: |
+          cd focus-stack
+          make
+          make builddeb
+          make build/focus-stack.AppImage
+        
+      - name: Upload deb
+        uses: actions/upload-artifact@v4
+        with:
+          path: focus-stack/DEBUILD/*.deb
+          name: Focus-stack ARM64 package
   mac_binary:
     name: Build binary on Mac OS X 14
     runs-on: macos-14
