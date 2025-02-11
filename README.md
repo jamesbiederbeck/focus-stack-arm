@@ -1,5 +1,6 @@
 Focus Stack Builds for ARM
 ============================
+# Currently unstable
 I've got arm64 devices all over, so I need this. I think this will run in termux on android, that's my target.
 I'm building this on an ARM64 chromebook and in a self hosted GitHub Actions Runner on a pi 4. 
 
